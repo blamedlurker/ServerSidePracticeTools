@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QJEA/mAo3nuR3ExGqm35NESY8EOrcimBXfDMJFXdMI7PNxPsiHAtxlcKYfLOZL3g4bkcn/4hB/asarCD3GyL3Q==",
+  "success": true,
+  "projectFilePath": "/home/blame/coding/puck_mods/ServerSidePracticeTools/ServerSidePracticeTools.csproj",
+  "expectedPackageFiles": [
+    "/home/blame/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/blame/.nuget/packages/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

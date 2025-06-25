@@ -1,0 +1,9 @@
+/home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.csproj.AssemblyReference.cache
+/home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.GeneratedMSBuildEditorConfig.editorconfig
+/home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.AssemblyInfoInputs.cache
+/home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.AssemblyInfo.cs
+/home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.csproj.CoreCompileInputs.cache
+/home/blame/coding/puck_mods/ServerSidePracticeTools/bin/Debug/net4.8/ServerSidePracticeTools.dll
+/home/blame/coding/puck_mods/ServerSidePracticeTools/bin/Debug/net4.8/ServerSidePracticeTools.pdb
+/home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.dll
+/home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.pdb
