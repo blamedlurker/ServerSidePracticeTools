@@ -7,3 +7,4 @@
 /home/blame/coding/puck_mods/ServerSidePracticeTools/bin/Debug/net4.8/ServerSidePracticeTools.pdb
 /home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.dll
 /home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.pdb
+/home/blame/coding/puck_mods/ServerSidePracticeTools/obj/Debug/net4.8/ServerSidePracticeTools.sourcelink.json

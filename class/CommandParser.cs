@@ -35,6 +35,7 @@ namespace ServerSidePracticeTools
             string command = (string)message["command"];
             string[] args = (string[])message["args"];
             Player player = PlayerManager.Instance.GetPlayerByClientId(clientId);
+            int n;
 
             switch (command)
             {
@@ -47,7 +48,7 @@ namespace ServerSidePracticeTools
                     }
 
                     Vector3 offset = new Vector3(0, 0.3f, 0);
-                    int n = 1;
+                    n = 1;
                     if (args.Length > 0) int.TryParse(args[0], out n);
 
                     if (n > SSPTConstants.SERVER_PUCK_LIMIT)
@@ -90,34 +91,74 @@ namespace ServerSidePracticeTools
                         break;
                     }
 
-                    int m = 10;
-                    if (args.Length > 0) int.TryParse(args[0], out m);
+                    n = 10;
+                    if (args.Length > 0) int.TryParse(args[0], out n);
 
-                    if (m > SSPTConstants.SERVER_PUCK_LIMIT)
+                    if (n > SSPTConstants.SERVER_PUCK_LIMIT)
                     {
                         UIChat.Instance.Server_SendSystemChatMessage($"<color=red>Please spawn no more than {SSPTConstants.SERVER_PUCK_LIMIT} pucks at one time.</color>", clientId);
                         break;
                     }
 
-                    if (PuckManager.Instance.GetPucks().Count + m > SSPTConstants.SERVER_PUCK_LIMIT)
+                    if (PuckManager.Instance.GetPucks().Count + n > SSPTConstants.SERVER_PUCK_LIMIT)
                     {
                         List<Puck> puckList = PuckManager.Instance.GetPucks();
-                        for (int i = 0; i < puckList.Count + m - 50; i++)
+                        for (int i = 0; i < puckList.Count + n - 50; i++)
                         {
                             PuckManager.Instance.Server_DespawnPuck(puckList[i]);
                         }
                     }
 
-                    for (int i = 1; i <= m; i++)
+                    for (int i = 1; i <= n; i++)
                     {
                         PuckManager.Instance.Server_SpawnPuck(
-                            new Vector3(UnityEngine.Random.Range(-20, 20), UnityEngine.Random.Range(0, 10), UnityEngine.Random.Range(-40, 40)),
+                            new Vector3(UnityEngine.Random.Range(-20, 20), UnityEngine.Random.Range(0, 3), UnityEngine.Random.Range(-40, 40)),
                             new Quaternion(0, 0, 0, 0),
                             new Vector3(0, 0, 0)
                             );
                     }
                     UIChat.Instance.Server_SendSystemChatMessage(
-                    $"{UIChat.Instance.WrapInTeamColor(player.Team.Value, $"#{player.Number.Value} {player.Username.Value.ToString()}")} has spawned {m} random pucks."
+                    $"{UIChat.Instance.WrapInTeamColor(player.Team.Value, $"#{player.Number.Value} {player.Username.Value.ToString()}")} has spawned {n} random pucks."
+                );
+                    break;
+
+
+                case "/snz":
+                case "/spawnneutralzone":
+                    if (GameManager.Instance.Phase != GamePhase.Warmup)
+                    {
+                        UIChat.Instance.Server_SendSystemChatMessage($"<color=red>{command} can only be used during warmup!</color>");
+                        break;
+                    }
+
+                    n = 10;
+                    if (args.Length > 0) int.TryParse(args[0], out n);
+
+                    if (n > SSPTConstants.SERVER_PUCK_LIMIT)
+                    {
+                        UIChat.Instance.Server_SendSystemChatMessage($"<color=red>Please spawn no more than {SSPTConstants.SERVER_PUCK_LIMIT} pucks at one time.</color>", clientId);
+                        break;
+                    }
+
+                    if (PuckManager.Instance.GetPucks().Count + n > SSPTConstants.SERVER_PUCK_LIMIT)
+                    {
+                        List<Puck> puckList = PuckManager.Instance.GetPucks();
+                        for (int i = 0; i < puckList.Count + n - 50; i++)
+                        {
+                            PuckManager.Instance.Server_DespawnPuck(puckList[i]);
+                        }
+                    }
+
+                    for (int i = 1; i <= n; i++)
+                    {
+                        PuckManager.Instance.Server_SpawnPuck(
+                            new Vector3(UnityEngine.Random.Range(-20, 20), UnityEngine.Random.Range(0, 3), UnityEngine.Random.Range(-12, 12)),
+                            new Quaternion(0, 0, 0, 0),
+                            new Vector3(0, 0, 0)
+                            );
+                    }
+                    UIChat.Instance.Server_SendSystemChatMessage(
+                    $"{UIChat.Instance.WrapInTeamColor(player.Team.Value, $"#{player.Number.Value} {player.Username.Value.ToString()}")} has spawned {n} random pucks in the neutral zone."
                 );
                     break;
 
