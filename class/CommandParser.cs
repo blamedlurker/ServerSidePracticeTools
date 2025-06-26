@@ -232,7 +232,8 @@ namespace ServerSidePracticeTools
                                      "<b>/freezepucks</b> (/fp) - <i>Freezes all currently spawned pucks in place</i><br>" +
                                      "<b>/unfreezepucks</b> (/ufp) - <i>Unfreezes all currently spawned pucks</i><br>" +
                                      "<b>/emptypucks</b> (/ep) - <i>Removes all currently spawned pucks</i><br>" +
-                                     "<b>/resetpucks</b> (/rp) - <i>Resets pucks to default warmup positions</i><br>";
+                                     "<b>/resetpucks</b> (/rp) - <i>Resets pucks to default warmup positions</i><br>" +
+                                     "<b>/spawnneutralzone</b> (/snz) - <i>Spawns a number of pucks in the neutral zone at random positions</i><br>";
                     UIChat.Instance.Server_SendSystemChatMessage(comList, clientId);
                     break;
 
